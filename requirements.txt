@@ -1,0 +1,31 @@
+# SmartFrac 第一阶段 MVP 依赖
+# Python 3.10 ~ 3.11（本环境使用 3.11.9）
+# PyTorch CPU 版安装方式（无 NVIDIA GPU 时）：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# 有 CUDA 11.8/12.1 GPU 时改用：
+#   pip install torch --index-url https://download.pytorch.org/whl/cu118
+
+# --- 深度学习核心 ---
+torch>=2.2
+scikit-learn>=1.4
+
+# --- 原子模拟 / MD ---
+ase>=3.22
+dscribe>=2.1          # SOAP 等局域环境描述符（librascal 为可选替代）
+
+# --- 科学计算 / 数据 ---
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+h5py>=3.10
+pyyaml>=6.0
+omegaconf>=2.3
+
+# --- 可视化 ---
+matplotlib>=3.8
+pyvista>=0.43
+seaborn>=0.13
+
+# --- 工程 / 测试 / 监控 ---
+pytest>=8.0
+tensorboard>=2.16

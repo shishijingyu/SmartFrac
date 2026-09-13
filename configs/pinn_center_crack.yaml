@@ -1,0 +1,20 @@
+# PINN 中心裂纹 α-Fe 算例
+project:
+  name: smartfrac-pinn-cc
+  seed: 42
+
+device:
+  mode: auto
+
+pinn:
+  hidden_dims: [64, 64, 64, 64]
+  activation: tanh
+  epochs: 3000
+  lr: 0.001
+  n_collocation: 10000
+  n_boundary: 1000
+  Lx: 0.01     # m, 半宽
+  Ly: 0.01
+  w_pde: 1.0
+  w_bc: 10.0
+  tip_radius: 0.0005

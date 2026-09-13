@@ -1,0 +1,47 @@
+name: smartfrac
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  # 主语言（文档要求 3.10~3.11，推荐 3.10；本环境实测 3.11.9）
+  - python=3.11
+  - pip
+
+  # 深度学习核心
+  - pytorch>=2.2
+  - cpuonly            # 有 NVIDIA GPU 时改为对应 pytorch-cuda=11.8 / 12.1
+  - scikit-learn>=1.4
+
+  # 原子模拟
+  - ase>=3.22
+  - dscribe>=2.1
+
+  # 科学计算
+  - numpy>=1.26
+  - scipy>=1.11
+  - pandas>=2.1
+  - h5py>=3.10
+  - pyyaml>=6.0
+  - omegaconf>=2.3
+
+  # 可视化
+  - matplotlib>=3.8
+  - pyvista>=0.43
+  - seaborn>=0.13
+
+  # 工程 / 测试
+  - pytest>=8.0
+  - tensorboard>=2.16
+
+  - pip:
+      # 第二阶段可选依赖（按需取消注释）
+      # - hydra-core
+      # - optuna
+      # - transformers
+      # - PyQt5
+      # - fastapi
+      # - uvicorn
+      # - celery
+      # - redis

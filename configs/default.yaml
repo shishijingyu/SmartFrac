@@ -1,0 +1,40 @@
+# SmartFrac 默认配置（示例）
+# 所有算例参数均通过 YAML / OmegaConf 管理，代码中禁止硬编码
+
+project:
+  name: SmartFrac
+  seed: 42
+
+device:
+  # auto: 有 CUDA 用 GPU，否则 CPU
+  mode: auto
+  # device: cpu   # 手动指定时取消注释
+
+nnp:
+  hidden_dims: [256, 256, 128]
+  descriptor:
+    name: soap          # dscribe SOAP
+    r_cut: 5.0
+    n_max: 8
+    l_max: 6
+  train:
+    epochs: 200
+    batch_size: 32
+    lr: 1.0e-3
+    weight_decay: 1.0e-5
+
+pinn:
+  # 断裂相场 / 弹性偏微分方程残差采样
+  n_collocation: 10000
+  n_boundary: 1000
+  epochs: 5000
+  lr: 1.0e-3
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  h5_file: data/processed/smartfrac.h5
+
+logging:
+  tensorboard_dir: results/tensorboard
+  output_dir: results
