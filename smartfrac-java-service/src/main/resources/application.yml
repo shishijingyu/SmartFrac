@@ -1,0 +1,42 @@
+server:
+  port: 48091
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: smartfrac-java-service
+
+  # MySQL 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.115:3306/SmartFrac?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root1234
+
+  # Redis 缓存/任务队列
+  data:
+    redis:
+      host: 192.168.1.115
+      port: 6379
+      password:
+      database: 0
+      timeout: 3000ms
+
+# MyBatis-Plus
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: vip.xiaonuo.smartfrac.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# Python 计算内核地址（FastAPI）
+python-kernel:
+  base-url: http://localhost:48092
+
+# 日志
+logging:
+  level:
+    vip.xiaonuo.smartfrac: debug
+    com.baomidou.mybatisplus: warn

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>vip.xiaonuo</groupId>
+    <artifactId>SmartFrac</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>SmartFrac</name>
+    <description>多尺度-不确定性耦合AI断裂智能仿真系统</description>
+
+    <modules>
+        <module>smartfrac-java-service</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- 依赖版本 -->
+        <spring-boot.version>3.2.5</spring-boot.version>
+        <mybatis-plus.version>3.5.6</mybatis-plus.version>
+        <mysql.version>8.0.33</mysql.version>
+        <hutool.version>5.8.27</hutool.version>
+        <minio.version>8.5.10</minio.version>
+        <spring-amqp.version>3.1.4</spring-amqp.version>
+    </properties>
+
+</project>

@@ -1,0 +1,33 @@
+# NNP α-Fe 算例配置
+project:
+  name: smartfrac-alpha-fe-nnp
+  seed: 42
+
+device:
+  mode: auto
+
+data:
+  train_h5: data/processed/alpha_fe.h5
+  split: [0.7, 0.15, 0.15]
+  augment_noise: 0.05
+  n_aug: 1
+
+descriptor:
+  r_cut: 5.0
+  n_max: 8
+  l_max: 6
+  species: [26]
+
+nnp:
+  hidden_dims: [128, 128, 64]
+  activation: tanh
+  w_energy: 1.0
+  w_force: 10.0
+  epochs: 200
+  lr: 0.001
+  early_stop_patience: 50
+
+md:
+  nsteps: 10000
+  temperature_K: 300
+  crack: cc_2d
